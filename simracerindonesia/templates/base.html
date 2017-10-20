@@ -1,0 +1,127 @@
+{% load static thumbnail %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero - Free Bulma template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Anton|Lato|Faster+One" rel="stylesheet">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
+</head>
+<body>
+<nav class="navbar is-black" role="navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="{% static 'images/sri_logo.png' %}" width="100px" height="100px">
+    </a>
+    <button class="button navbar-burger is-dark" data-target="navbar_menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="navbar-menu" id="navbar_menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/">
+        <i class="fa fa-car"></i>
+        Series
+      </a>
+      <a class="navbar-item" href="/">
+        <i class="fa fa-calendar"></i>
+        Calendar
+      </a>
+      <a class="navbar-item" href="/">
+        <i class="fa fa-flag-checkered"></i>
+        Results
+      </a>
+      <a class="navbar-item" href="/">
+        <i class="fa fa-file-text-o"></i>
+        Blog
+      </a>
+      <a class="navbar-item" href="/">
+        <i class="fa fa-group"></i>
+        Drivers
+      </a>
+      <a class="navbar-item" href="/">
+        <i class="fa fa-user"></i>
+        Register
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section id="cover">
+  <figure class="image is-1920x1080" id="main_image">
+    <img src="{% static 'images/1.jpg' %}">
+  </figure>
+
+  <span>The Home of Hardcore Racing Simulation</span>
+
+  <div id="latest_results">
+    <div>LATEST RACE RESULTS</div>
+
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-16by9">
+          <img src="/static/images/2.png" alt="Placeholder image">
+        </figure>
+      </div>
+
+      <div class="card-content">
+        <div class="content">
+          Radical Round 5 Road America
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-16by9">
+          <img src="/static/images/2.png" alt="Placeholder image">
+        </figure>
+      </div>
+
+      <div class="card-content">
+        <div class="content">
+          Radical Round 5 Road America
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-16by9">
+          <img src="/static/images/2.png" alt="Placeholder image">
+        </figure>
+      </div>
+
+      <div class="card-content">
+        <div class="content">
+          Radical Round 5 Road America
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Copyright<i class="fa fa-copyright"></i> Sim Racer Indonesia 2017 · Created by <a href="/"><strong>Abirafdi Raditya Putra</strong></a><br>
+        The source code is licensed
+        <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3</a> which can be viewed in <i class="fa fa-github"></i> <a href="/">GitHub</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script type="application/javascript" src="{% static 'js/project.js' %}"></script>
+
+</body>
+</html>

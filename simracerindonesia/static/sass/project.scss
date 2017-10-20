@@ -1,0 +1,79 @@
+nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+section.hero.is-dark.is-bold{
+  margin-top: 50px;
+}
+
+#home_apps {
+  .card{
+    .card-image figure{
+      height: 100px;
+    }
+  }
+}
+
+#next_race_box{
+  border: white solid 2px;
+}
+
+.has-text-red{
+  color: #ec101a !important;
+}
+//
+//
+//#main_image{
+//  z-index: -10;
+//}
+//
+//#cover{
+//  >span {
+//    font-family: "Faster One", cursive;
+//    font-size: 4vw;
+//    color: white;
+//    position: absolute;
+//    top: 4.5vw;
+//    width: 50vw;
+//    right: 5px;
+//    text-align: right;
+//    margin-left: 1vw;
+//    line-height: 3vw;
+//  }
+//
+//  #latest_results{
+//    >div:first-child{
+//      color: white;
+//      padding-bottom: 5px;
+//      font-weight: 700;
+//    }
+//
+//    position: absolute;
+//    top: 8.5vw;
+//    left: 0.35vw;
+//    background-color: rgba(255, 0, 28, 0.1);
+//    padding: 5px 2px 10px 7px;
+//
+//    .card{
+//      width: 180px;
+//      display: inline-block;
+//      margin-right: 5px;
+//      .card-content{
+//        padding: 10px 10px 10px 10px;
+//      }
+//
+//      :hover {
+//        background-color:#6bc3ef;
+//        background-image:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,.7) 100%);
+//        background-repeat:no-repeat;
+//        background-size: 200% 100%;
+//        transition:background-size 1s, background-color 1s;
+//      }
+//    }
+//  }
+//}
+//
+//

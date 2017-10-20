@@ -1,0 +1,175 @@
+{% load static thumbnail %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero - Free Bulma template</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Anton|Lato|Faster+One" rel="stylesheet">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
+</head>
+<body>
+<nav class="navbar is-white" role="navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="{% static 'images/sri_logo.png' %}" width="100px" height="100px">
+    </a>
+    <button class="button navbar-burger is-dark" data-target="navbar_menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="navbar-menu" id="navbar_menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="/">
+        <span class="icon">
+          <i class="fa fa-user"></i>
+        </span>
+        Register
+      </a>
+    </div>
+  </div>
+</nav>
+<section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-quarters">
+          <h1 class="title has-text-red">
+            Sim Racer Indonesia
+          </h1>
+          <h2 class="subtitle">
+            The Home of Hardcore Racing Simulation
+          </h2>
+        </div>
+        <div class="column" id="next_race_box">
+          <h2 class="has-text-red">NEXT EVENT</h2>
+          Next race in 46:02:01, Historic at Spa Historic. See our live broadcasting <a href="/">here</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="home_apps">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="/static/images/cal.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              See the bird's eyes view of our series schedule. <b>Never miss a race!</b>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+      <span>
+        View the <a href="https://twitter.com/codinghorror/status/506010907021828096">calendar</a>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="/static/images/result.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              See the race results, available <b>just minutes</b> after the race.
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+      <span>
+        View or search the <a href="https://twitter.com/codinghorror/status/506010907021828096">results</a>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="/static/images/series.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              We have <b>diverse range of series</b> to choose from. Take a look!
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+      <span>
+        View the <a href="https://twitter.com/codinghorror/status/506010907021828096">series</a>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="/static/images/standings.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Want to find out whether is it possible for you to snag the champ?
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+      <span>
+        View the <a href="https://twitter.com/codinghorror/status/506010907021828096">standings</a>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img src="/static/images/driver.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              We have <b>123</b> drivers in our community. Get to know them!
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+      <span>
+        View the <a href="https://twitter.com/codinghorror/status/506010907021828096">drivers</a>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/javascript" src="{% static 'js/project.js' %}"></script>
+
+</body>
+</html>
