@@ -1,19 +1,31 @@
-nav {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0; }
-
-section.hero.is-dark.is-bold {
-  margin-top: 50px; }
-
 #home_apps .card .card-image figure {
   height: 100px; }
 
 #next_race_box {
-  border: white solid 2px; }
+  border: white solid 2px;
+  background-color: #2a2a2a; }
 
 .has-text-red {
-  color: #ec101a !important; }
+  color: #b00101 !important; }
+
+#home_content h3 {
+  margin-bottom: 10px; }
+
+.hero-foot .tag {
+  margin-left: 5px;
+  padding: 3px 7px 3px 7px; }
+
+.card-icon-container {
+  margin-top: 20px;
+  margin-bottom: 50px; }
+
+.gold {
+  color: gold; }
+
+.silver {
+  color: silver; }
+
+.bronze {
+  color: #a06539; }
 
 /*# sourceMappingURL=project.css.map */
