@@ -1,375 +1,222 @@
+{% extends 'base.html' %}
 {% load static thumbnail %}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hero - Free Bulma template</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Anton|Lato|Faster+One" rel="stylesheet">
-  <!-- Bulma Version 0.6.0 -->
-  <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"/>
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <div class="hero">
+        <h2 class="title">The Home of Hardcore Racing Simulation</h2>
+        <h3 class="subtitle">Established in 2011, our community have grown into more than <b>317</b> drivers from all around the world!</h3>
+      </div>
+    </div>
+  </section>
 
-  <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/flipclock.css' %}"/>
-</head>
-<body>
-<section class="hero is-dark is-bold">
-  <div class="hero-body">
+  <section class="container">
+    <div class="columns features">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <div class="has-text-centered card-icon-container">
+              <span class="icon"><i class="fa fa-flag-checkered fa-5x"></i></span>
+            </div>
+            <div class="content">
+              <h4><b>Have passion in Sim Racing?</b></h4>
+              <p>
+                Sim Racer Indonesia, as the largest racing sim community in Indonesia, has always been at the forefront to accommodate this activity.
+                The community are passionate about simulating great racing environment using racing simulation software.
+                We have over 6 years of experience organizing regional and international racing simulation events.
+              </p>
+              <br/>
+              <p><a href="#">Join our community</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <div class="has-text-centered card-icon-container">
+              <span class="icon"><i class="fa fa-rocket fa-5x"></i></span>
+            </div>
+            <div class="content">
+              <h4><b>Packed with features</b></h4>
+              <p>
+                Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience.
+                Starting from results that updated minutes after the race, a sophisticated calendar, achievements, trophies, membership system and more.
+                <br>
+                <br>
+                <br>
+                <br>
+              </p>
+              <p><a href="#">Learn our features</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-content">
+            <div class="has-text-centered card-icon-container">
+              <span class="icon"><i class="fa fa-globe fa-5x"></i></span>
+            </div>
+            <div class="content">
+              <h4><b>All around the world</b></h4>
+              <p>
+                Not a few participants from abroad also participated; for example from Argentina, Brazil, Lithuania, Hungary, Turky, Great Britain, Poland, USA, Malaysia, Singapore, Philippines, Australia, etc.
+                Sim Racer Indonesia consistently sent representatives to participate in the championship at the international level.</p><br>
+              <p><a href="#">Get to know the drivers</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-three-quarters">
-          <figure class="image" style="width: 300px">
-            <h1>
-              <img src="/static/images/sri_logo_big.png" alt="Sim Racer Indonesia. Racing Simulation Community. The Home of Hardcore Simulation. ">
-            </h1>
-          </figure>
-        </div>
-        <div class="column" id="next_race_box">
-          <span class="has-text-red"><b>NEXT EVENT</b></span> 46:02:01<br>
-          <b><span class="icon"><i class="fa fa-car"></i></span> GT3 Asia</b><br>
-          <b><span class="icon"><i class="fa fa-road"></i></span> Sentul</b><br>
-          See our live broadcasting <a href="/">here</a>.
-        </div>
-      </div>
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/logitech.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/alien_needs.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/zotac_logo.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/speed_secrets.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/rf2_logo.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/iwk.png">
-            </a>
-            <a class="navbar-item" href="/">
-              <img src="/static/images/sponsors/liveracers.png">
-            </a>
-            <button class="button navbar-burger" data-target="navbar_menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-          <div id="navbar_menu" class="navbar-menu">
-            <div class="navbar-end">
-            <span class="navbar-item">
-              <a class="button is-dark">
-                <span class="icon">
-                  <i class="fa fa-user"></i>
-                </span>
-                <span>Register</span>
-              </a>
-            </span>
+        <div class="column is-half">
+          <h5 class="is-size-4"><b>Latest results</b></h5>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
+                <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
+              </div>
+              <div class="column is-narrow level-right">
+                <div class="podium">
+                  <ol>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
+                    </li>
+                  </ol>
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
+                <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
+              </div>
+              <div class="column is-narrow level-right">
+                <div class="podium">
+                  <ol>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
+                <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
+              </div>
+              <div class="column is-narrow level-right">
+                <div class="podium">
+                  <ol>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-      </nav>
-    </div>
-  </div>
-  <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
-      <div class="container">
-        <ul>
-          <li class="is-active">
-            <a>
-              <span class="icon">
-                  <i class="fa fa-user"></i>
-                </span>
-              Welcome
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-calendar"></i>
-                </span>
-              Calendar
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-flag-checkered"></i>
-                </span>
-              Results
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-car"></i>
-                </span>
-              Series
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-trophy"></i>
-                </span>
-              Standings
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-group"></i>
-                </span>
-              Drivers
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <span class="icon">
-                  <i class="fa fa-file-text-o"></i>
-                </span>
-              Blog
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="hero">
-      <h2 class="title">The Home of Hardcore Racing Simulation</h2>
-      <h3 class="subtitle">Established in 2011, our community have grown into more than <b>317</b> drivers from all around the world!</h3>
-    </div>
-  </div>
-</section>
-
-<section class="container">
-  <div class="columns features">
-    <div class="column is-4">
-      <div class="card">
-        <div class="card-content">
-          <div class="has-text-centered card-icon-container">
-            <span class="icon"><i class="fa fa-flag-checkered fa-5x"></i></span>
-          </div>
-          <div class="content">
-            <h4><b>Have passion in Sim Racing?</b></h4>
-            <p>
-              Sim Racer Indonesia, as the largest racing sim community in Indonesia, has always been at the forefront to accommodate this activity.
-              The community are passionate about simulating great racing environment using racing simulation software.
-              We have over 6 years of experience organizing regional and international racing simulation events.
-            </p>
-            <p><a href="#">Join our community</a></p>
-          </div>
+        <div class="column is-half">
+          <h5 class="is-size-4"><b>Latest blog and news</b></h5>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="is-size-4">Hill Climb Winner</h6>
+                <div>
+                  <p>
+                    Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="is-size-4">Hill Climb Winner</h6>
+                <div>
+                  <p>
+                    Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="box entry">
+            <div class="columns level">
+              <div class="column is-narrow">
+                <figure class="image is-128x128 level-left">
+                  <img src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+              </div>
+              <div class="column level-item">
+                <h6 class="is-size-4">Hill Climb Winner</h6>
+                <div>
+                  <p>
+                    Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
-    <div class="column is-4">
-      <div class="card">
-        <div class="card-content">
-          <div class="has-text-centered card-icon-container">
-            <span class="icon"><i class="fa fa-rocket fa-5x"></i></span>
-          </div>
-          <div class="content">
-            <h4><b>Packed with features</b></h4>
-            <p>
-              Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience.
-              Starting from results that updated minutes after the race, a sophisticated calendar, achievements, trophies, membership system and more.
-              <br>
-              <br>
-              <br>
-              <br>
-            </p>
-            <p><a href="#">Learn our features</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="column is-4">
-      <div class="card">
-        <div class="card-content">
-          <div class="has-text-centered card-icon-container">
-            <span class="icon"><i class="fa fa-globe fa-5x"></i></span>
-          </div>
-          <div class="content">
-            <h4><b>All around the world</b></h4>
-            <p>
-              Not a few participants from abroad also participated; for example from Argentina, Brazil, Lithuania, Hungary, Turky, Great Britain, Poland, USA, Malaysia, Singapore, Philippines, Australia, etc.
-              Sim Racer Indonesia consistently sent representatives to participate in the championship at the international level.</p><br>
-            <p><a href="#">Get to know the drivers</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-half">
-        <h5 class="is-size-4"><b>Latest results</b></h5>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
-              <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
-            </div>
-            <div class="column is-narrow level-right">
-              <div class="podium">
-                <ol>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
-              <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
-            </div>
-            <div class="column is-narrow level-right">
-              <div class="podium">
-                <ol>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="has-text-centered"><span class="icon"><i class="fa fa-car"></i></span>&nbsp; <b>Historic Round 6</b></h6>
-              <div class="has-text-centered"> <span class="icon"><i class="fa fa-road"></i></span>&nbsp; Nurburgring GP</div>
-            </div>
-            <div class="column is-narrow level-right">
-              <div class="podium">
-                <ol>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy gold"></i></span> Mark Adam
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy silver"></i></span> Abirafdi Raditya Putra
-                  </li>
-                  <li>
-                    <span class="icon"><i class="fa fa-trophy bronze"></i></span> John Smith
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-      <div class="column is-half">
-        <h5 class="is-size-4"><b>Latest news</b></h5>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="is-size-4">Hill Climb Winner</h6>
-              <div>
-                <p>
-                  Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="is-size-4">Hill Climb Winner</h6>
-              <div>
-                <p>
-                  Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="box entry">
-          <div class="columns level">
-            <div class="column is-narrow">
-              <figure class="image is-128x128 level-left">
-                <img src="https://bulma.io/images/placeholders/128x128.png">
-              </figure>
-            </div>
-            <div class="column level-item">
-              <h6 class="is-size-4">Hill Climb Winner</h6>
-              <div>
-                <p>
-                  Sim Racer Indonesia is packed with lot of features that will greatly enhance your experience. Starting from results that updated minutes after the race, a sophisticated calendar
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script type="application/javascript" href="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-<script type="application/javascript" href="{% static 'js/flipclock.min.js' %}"></script>
-
-<script type="application/javascript" src="{% static 'js/project.js' %}"></script>
-</body>
-</html>
+  </section>
+{% endblock %}

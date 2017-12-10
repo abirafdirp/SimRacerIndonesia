@@ -11,117 +11,151 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Lato|Faster+One" rel="stylesheet">
   <!-- Bulma Version 0.6.0 -->
   <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"/>
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/flipclock.css' %}"/>
 </head>
 <body>
-<nav class="navbar is-black" role="navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="{% static 'images/sri_logo.png' %}" width="100px" height="100px">
-    </a>
-    <button class="button navbar-burger is-dark" data-target="navbar_menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-  <div class="navbar-menu" id="navbar_menu">
-    <div class="navbar-end">
-      <a class="navbar-item" href="/">
-        <i class="fa fa-car"></i>
-        Series
-      </a>
-      <a class="navbar-item" href="/">
-        <i class="fa fa-calendar"></i>
-        Calendar
-      </a>
-      <a class="navbar-item" href="/">
-        <i class="fa fa-flag-checkered"></i>
-        Results
-      </a>
-      <a class="navbar-item" href="/">
-        <i class="fa fa-file-text-o"></i>
-        Blog
-      </a>
-      <a class="navbar-item" href="/">
-        <i class="fa fa-group"></i>
-        Drivers
-      </a>
-      <a class="navbar-item" href="/">
-        <i class="fa fa-user"></i>
-        Register
-      </a>
-    </div>
-  </div>
-</nav>
-
-<section id="cover">
-  <figure class="image is-1920x1080" id="main_image">
-    <img src="{% static 'images/1.jpg' %}">
-  </figure>
-
-  <span>The Home of Hardcore Racing Simulation</span>
-
-  <div id="latest_results">
-    <div>LATEST RACE RESULTS</div>
-
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-16by9">
-          <img src="/static/images/2.png" alt="Placeholder image">
-        </figure>
-      </div>
-
-      <div class="card-content">
-        <div class="content">
-          Radical Round 5 Road America
+<section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-three-quarters">
+          <figure class="image" style="width: 300px">
+            <h1>
+              <img src="/static/images/sri_logo_big.png" alt="Sim Racer Indonesia. Racing Simulation Community. The Home of Hardcore Simulation. ">
+            </h1>
+          </figure>
+        </div>
+        <div class="column" id="next_race_box">
+          <span class="has-text-red"><b>NEXT EVENT</b></span> 46:02:01<br>
+          <b><span class="icon"><i class="fa fa-car"></i></span> GT3 Asia</b><br>
+          <b><span class="icon"><i class="fa fa-road"></i></span> Sentul</b><br>
+          See our live broadcasting <a href="/">here</a>.
         </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-16by9">
-          <img src="/static/images/2.png" alt="Placeholder image">
-        </figure>
-      </div>
-
-      <div class="card-content">
-        <div class="content">
-          Radical Round 5 Road America
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/logitech.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/alien_needs.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/zotac_logo.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/speed_secrets.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/rf2_logo.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/iwk.png">
+            </a>
+            <a class="navbar-item" href="/">
+              <img src="/static/images/sponsors/liveracers.png">
+            </a>
+            <button class="button navbar-burger" data-target="navbar_menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <div id="navbar_menu" class="navbar-menu">
+            <div class="navbar-end">
+            <span class="navbar-item">
+              <a class="button is-dark">
+                <span class="icon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <span>Register</span>
+              </a>
+            </span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-16by9">
-          <img src="/static/images/2.png" alt="Placeholder image">
-        </figure>
-      </div>
-
-      <div class="card-content">
-        <div class="content">
-          Radical Round 5 Road America
-        </div>
-      </div>
+      </nav>
     </div>
   </div>
-
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span class="icon">
+                  <i class="fa fa-user"></i>
+                </span>
+              Welcome
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              Calendar
+              <span class="tag is-primary">New</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-flag-checkered"></i>
+                </span>
+              Results
+              <span class="tag is-primary">New</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-car"></i>
+                </span>
+              Series
+              <span class="tag is-primary">New</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-trophy"></i>
+                </span>
+              Standings
+              <span class="tag is-primary">New</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-group"></i>
+                </span>
+              Drivers
+              <span class="tag is-primary">New</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon">
+                  <i class="fa fa-file-text-o"></i>
+                </span>
+              Blog and News
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        Copyright<i class="fa fa-copyright"></i> Sim Racer Indonesia 2017 · Created by <a href="/"><strong>Abirafdi Raditya Putra</strong></a><br>
-        The source code is licensed
-        <a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3</a> which can be viewed in <i class="fa fa-github"></i> <a href="/">GitHub</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </div>
-</footer>
+{% block content %}{% endblock %}
+
+<script type="application/javascript" href="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script type="application/javascript" href="{% static 'js/flipclock.min.js' %}"></script>
 
 <script type="application/javascript" src="{% static 'js/project.js' %}"></script>
-
 </body>
 </html>
