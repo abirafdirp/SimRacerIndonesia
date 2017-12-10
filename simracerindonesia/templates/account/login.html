@@ -1,0 +1,61 @@
+{% extends "account/base_nomenu.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content_account %}
+
+    <h2 class="text-center">{% trans "Welcome" %}</h2>
+    <div class="large-3 medium-3 small-4 columns small-centered border-blue margin-bottom-40"></div>
+
+        {% get_providers as socialaccount_providers %}
+
+
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+         <div class="textInput">
+          {% csrf_token %}
+          {{ form|crispy }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <div class="right">
+              <a class="secondaryAction size-13-5" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+          </div>
+         <script>
+           var doc = document.querySelector("[for='id_remember']");
+           doc.innerHTML = "{% trans 'Remember Me' %}";
+         </script>
+        <div class="clearfix"></div>
+          <button class="primaryAction button expand small" style="background: #1B75BB!important;" type="submit">{% trans "LOGIN" %}</button>
+         </div>
+        </form>
+
+        {% if socialaccount_providers %}
+        <div class="margin-bottom-30" style="width: 100%; height: 14px; border-bottom: 1px solid #CFCFCF; text-align: center">
+          <span style="background-color: #ffffff; padding: 0 10px; color: #5f5f5f">
+            {% trans "Or login with" %}
+          </span>
+        </div>
+{#        <p>{% blocktrans with site.name as site_name %}Please sign in with one#}
+{#        of your existing third party accounts. Or, <a href="{{ signup_url }}">Sign up</a>#}
+{#        for a {{ site_name }} account.{% endblocktrans %}</p>#}
+
+        <div class="socialaccount_ballot">
+            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+        </div>
+
+{#        <p class="text-center size-13-5 margin-top-30">{% trans "Don't have an Account?" %} <a href="{{ signup_url }}">{% trans "SIGN UP" %}</a></p>#}
+            <p class="text-center size-13-5 margin-top-30">{% trans "Don't have a Mekar Account yet?" %} <a href="{% url 'users:choose_user_type' %}">{% trans "SIGN UP" %}</a></p>
+
+        {% include "socialaccount/snippets/login_extra.html" %}
+
+        {% else %}
+        <p>{% blocktrans %}If you have not created an account yet, then please
+        <a href="{{ signup_url }}">Sign up</a> first.{% endblocktrans %}</p>
+        {% endif %}
+
+{% endblock %}
+

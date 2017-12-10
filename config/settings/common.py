@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-import os
-
 import environ
+
+from crispy_forms_bulma.settings import *  # noqa
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = environ.Path(__file__) - 3
@@ -38,13 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'easy_thumbnails',
+    'crispy_forms',
 
     'simracerindonesia.content',
     'simracerindonesia.core',
-    'simracerindonesia.users'
+    'simracerindonesia.users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -65,8 +72,12 @@ TEMPLATES = [
         'DIRS': [
             APPS_DIR.path('templates')
         ],
-        'APP_DIRS': False,
         'OPTIONS': {
+            'debug': DEBUG,
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -78,6 +89,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+# MIGRATIONS CONFIGURATION
+# ------------------------------------------------------------------------------
+MIGRATION_MODULES = {
+    'sites': 'simracerindonesia.contrib.sites.migrations'
+}
+
+SITE_ID = 1
 
 
 # Database
@@ -147,3 +166,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 AUTH_USER_MODEL = 'users.User'
+ACCOUNT_AUTHENTICATION_METHOD ='email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False

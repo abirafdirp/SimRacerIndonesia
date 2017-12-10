@@ -1,0 +1,7 @@
+Selamat datang di Mekar.
+
+Terima kasih telah mendaftar di Mekar. Apakah Anda mendaftar sebagai {{ user_display }}@{{ email }}?
+Jika ya, maka silakan melakukan konfirmasi dengan mengklik link berikut {{ activate_url }}
+Terima kasih dan selamat bergabung.
+
+Tim Mekar

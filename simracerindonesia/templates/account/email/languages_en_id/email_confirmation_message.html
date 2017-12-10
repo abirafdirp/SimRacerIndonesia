@@ -1,0 +1,22 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}
+Welcome to Mekar, thank you for registering!
+<br/>
+Are you {{ user.email }} and you registered?<br/>
+Then please confirm it that this correct by clicking<br/>
+{{ activate_url }}
+<br/>
+Thank you,
+<br/>
+<strong>The Mekar Team</strong>
+<br/>
+<br/>
+<br/>
+Selamat datang di Mekar.
+<br/>
+Terima kasih telah mendaftar di Mekar. Apakah Anda mendaftar sebagai {{ user.email }}?<br/>
+Jika ya, maka silakan melakukan konfirmasi dengan mengklik link berikut<br/>
+{{ activate_url }}<br/>
+Terima kasih dan selamat bergabung.
+<br/>
+<strong>Tim Mekar</strong>
+{% endautoescape %}

@@ -1,0 +1,155 @@
+{% load staticfiles i18n compress%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block title %}FunderPortal{% endblock title %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  {% block map_js %}
+  {% endblock %}
+
+  {% block css %}
+    <!-- Latest compiled and minified Bootstrap 4 Alpha 4 CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700" rel="stylesheet">
+
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    {% compress css %}
+      <!-- This file stores project-specific CSS -->
+      <link href="{% static 'css/project.css' %}" rel="stylesheet">
+      <link href="{% static 'css/foundation.min.css' %}" rel="stylesheet">
+      <link href="{% static 'plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+
+      <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+      <link href="{% static 'css/app.css' %}" rel="stylesheet">
+      <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+    {% endcompress %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"/>
+  {% endblock %}
+
+</head>
+
+<body>
+
+<div id="search-cover"></div>
+
+<div class="fixed shadow">
+  <div id="first-bar">
+
+    <div class="">
+      <div class="large-12 columns">
+        <div class="right">
+          <div class="flag-language">
+            <a href="javascript:;" id="click-language-id">{% trans "INDONESIAN" %}</a>  &nbsp; | &nbsp;
+            <a href="javascript:;" id="click-language-en">{% trans "ENGLISH" %}</a>
+          </div>
+          <div style="display: none">
+            <form class="left" id="lang_english" action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              {% if request.LANGUAGE_CODE == 'en' %}
+                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+              {% else %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+              {% endif %}
+              <input name="language" type="hidden" value="en" />
+              <input type="submit" value="{% trans 'English' %}" />
+            </form>
+
+            <form class="left" id="lang_id" action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              {% if request.LANGUAGE_CODE == 'id' %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+              {% else %}
+                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" />
+              {% endif %}
+              <input name="language" type="hidden" value="id" />
+              <input type="submit" value="{% trans 'Indonesian' %}" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="#">
+            <img src="{% static 'images/logo.png' %}">
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li>
+          <a href="/">HOME</a>
+        </li>
+        <li><a href="/products">{% trans "PRODUCTS" %}</a></li>
+        <li><a href="{% url 'instrument:investments' %}">{% trans "INVESTMENTS" %}</a></li>
+        <li><a href="/microlending/faq">{% trans "FAQ" %}</a></li>
+        <li><a href="/pages">{% trans "BLOG" %}</a></li>
+
+        <li class="has-dropdown">
+          <a href="#">{% trans "MEMBER" %}</a>
+          {% if request.user.is_authenticated %}
+            <ul class="dropdown">
+              <li><a href="{% url 'users:dashboard'  %}">{% trans "DASHBOARD" %}</a></li>
+              <li><a href="{% url 'account_logout' %}">{% trans "LOGOUT" %}</a></li>
+            </ul>
+          {% else %}
+            <ul class="dropdown">
+              <li><a href="{% url 'account_login' %}">{% trans "SIGN IN" %}</a></li>
+              <li><a href="{% url 'account_signup' %}">{% trans "SIGN UP" %}</a></li>
+            </ul>
+          {% endif %}
+
+        </li>
+
+      </ul>
+    </section>
+  </nav>
+</div>
+
+{% block inner %}
+  <p>Use this document as a way to quick start any new project.</p>
+{% endblock inner %}
+{% block modal %}{% endblock modal %}
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+{% block javascript %}
+  <!-- Required by Bootstrap v4 Alpha 4 -->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>-->
+
+  <!-- Your stuff: Third-party javascript libraries go here -->
+
+  <!-- place project specific Javascript in this file -->
+  {% compress js %}
+    {% comment %}<script src="{% static 'js/project.js' %}"></script>{% endcomment %}
+
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/foundation.min.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/vendor/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+
+  {% endcompress %}
+
+{% endblock javascript %}
+</body>
+</html>
+
