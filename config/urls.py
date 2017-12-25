@@ -18,11 +18,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf.urls import include, url
 
+admin.site.site_header = 'Sim Racer Indonesia Administration'
+admin.site.site_title = 'Sim Racer Indonesia Administration'
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^accounts/', include('allauth.urls')),
-    url('', include('simracerindonesia.content.urls')),
+
+    url(r'', include('simracerindonesia.core.urls', namespace='core')),
+    url(r'', include('simracerindonesia.content.urls', namespace='content')),
 ]
 
 if settings.DEBUG:

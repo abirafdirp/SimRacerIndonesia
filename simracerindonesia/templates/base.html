@@ -1,4 +1,4 @@
-{% load static thumbnail %}
+{% load static thumbnail activeurl %}
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hero - Free Bulma template</title>
+  <title>{% block title %}{% endblock %}Sim Racer Indonesia - Home of Hardcore Racing Simulation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Anton|Lato|Faster+One" rel="stylesheet">
   <!-- Bulma Version 0.6.0 -->
@@ -14,6 +14,11 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'css/flipclock.css' %}"/>
+
+  <script type="application/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+
+  {% block additional_css %}
+  {% endblock %}
 </head>
 <body>
 <section class="hero is-dark is-bold">
@@ -83,9 +88,10 @@
   <div class="hero-foot">
     <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
+        {% activeurl css_class="is-active" %}
         <ul>
-          <li class="is-active">
-            <a>
+          <li>
+            <a href="/">
               <span class="icon">
                   <i class="fa fa-user"></i>
                 </span>
@@ -93,7 +99,7 @@
             </a>
           </li>
           <li>
-            <a>
+            <a href="{% url 'core:calendar' %}">
               <span class="icon">
                   <i class="fa fa-calendar"></i>
                 </span>
@@ -146,6 +152,7 @@
             </a>
           </li>
         </ul>
+        {% endactiveurl %}
       </div>
     </nav>
   </div>
@@ -153,9 +160,11 @@
 
 {% block content %}{% endblock %}
 
-<script type="application/javascript" href="{% static 'js/jquery-3.2.1.min.js' %}"></script>
 <script type="application/javascript" href="{% static 'js/flipclock.min.js' %}"></script>
 
 <script type="application/javascript" src="{% static 'js/project.js' %}"></script>
+
+{% block additional_js %}
+{% endblock %}
 </body>
 </html>

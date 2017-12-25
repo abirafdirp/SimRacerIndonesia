@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static thumbnail %}
+
+{% block title %}Calendar - {% endblock %}
+
+{% block additional_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/fullcalendar.min.css' %}"/>
+  <script type="application/javascript" src="{% static 'js/moment.js' %}"></script>
+  <script type="application/javascript" src="{% static 'js/fullcalendar.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <div class="hero">
+        <h2 class="title">Calendar</h2>
+        <h3 class="subtitle">Find out and plan your racing schedule</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div id="calendar"></div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block additional_js %}
+  <script type="application/javascript">
+    $(document).ready(function() {
+
+      // page is now ready, initialize the calendar...
+
+      $('#calendar').fullCalendar({
+        // put your options and callbacks here
+      })
+
+    });
+  </script>
+{% endblock %}

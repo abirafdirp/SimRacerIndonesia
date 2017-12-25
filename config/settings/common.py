@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 
     'easy_thumbnails',
     'crispy_forms',
+    'django_activeurl',
+    'reversion',
 
     'simracerindonesia.content',
     'simracerindonesia.core',
