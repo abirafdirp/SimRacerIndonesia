@@ -13,6 +13,14 @@ def generate_race_car_picture_path(instance, filename):
     )
 
 
+class Track(TimeStampedModel):
+    name = models.CharField(max_length=50, help_text='with mod name')
+    display_name = models.CharField(max_length=50, help_text='Simplified name')
+
+    def __str__(self):
+        return self.display_name
+
+
 class CarManufacturer(TimeStampedModel):
     name = models.CharField(max_length=100)
 
@@ -47,6 +55,7 @@ class RaceCar(TimeStampedModel):
 
 class Series(TimeStampedModel):
     name = models.CharField(max_length=100)
+    cars = models.ManyToManyField(RaceCar)
 
     def __str__(self):
         return self.name
@@ -64,8 +73,14 @@ class RaceWeekend(TimeStampedModel):
 
     series = models.ForeignKey(Series)
 
+    track = models.ForeignKey(Track)
+
+    objects = DefaultSelectOrPrefetchManager(
+        select_related=('track', 'series')
+    )
+
     def __str__(self):
-        return '{} {}'.format(self.date, self.series)
+        return '{} - {} - {}'.format(self.date, self.track, self.series)
 
 
 class Result(TimeStampedModel):
