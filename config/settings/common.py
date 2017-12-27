@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'easy_thumbnails',
+    'cities_light',
     'crispy_forms',
     'django_activeurl',
     'reversion',
@@ -168,6 +169,9 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 AUTH_USER_MODEL = 'users.User'
-ACCOUNT_AUTHENTICATION_METHOD ='email'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
+
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['fr', 'id']
+CITIES_LIGHT_DATA_DIR = str(APPS_DIR.path('core'))

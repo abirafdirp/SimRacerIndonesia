@@ -13,6 +13,10 @@ def generate_race_car_picture_path(instance, filename):
     )
 
 
+class RacingSimulator(TimeStampedModel):
+    name = models.CharField(unique=True, max_length=50)
+
+
 class Track(TimeStampedModel):
     name = models.CharField(max_length=50, help_text='with mod name')
     display_name = models.CharField(max_length=50, help_text='Simplified name')
@@ -86,7 +90,13 @@ class RaceWeekend(TimeStampedModel):
 class Result(TimeStampedModel):
     race_weekend = models.ForeignKey(RaceWeekend)
     position = models.IntegerField()
-    user = models.ForeignKey(User)
+
+    # null if driver is unknown (driver name ingame not match with user)
+    user = models.ForeignKey(
+        User, blank=True, null=True,
+        help_text='Empty if the driver ingame name does not match with '
+                  'the registered user name'
+    )
 
     def __str__(self):
         return '{} - {} - {}'.format(self.position, self.user,
