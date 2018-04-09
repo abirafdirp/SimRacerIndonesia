@@ -83,6 +83,49 @@ class Command(BaseCommand):
             if racing_simulators != '-':
                 racing_simulators = racing_simulators.split(', ')
                 for racing_simulator in racing_simulators:
+                    if 'rf' in racing_simulator.lower():
+                        racing_simulator = 'rFactor 2'
+                    elif 'corsa' in racing_simulator.lower():
+                        racing_simulator = 'Assetto Corsa'
+                    elif 'auto' in racing_simulator.lower():
+                        racing_simulator = 'Automobilista'
+                    elif 'dirt' in racing_simulator.lower():
+                        racing_simulator = 'DiRT Rally'
+                    elif 'cars' in racing_simulator.lower():
+                        racing_simulator = 'Project Cars '
+                    elif 'iracing' in racing_simulator.lower():
+                        racing_simulator = 'iRacing'
+                    elif 'speed' in racing_simulator.lower():
+                        racing_simulator = 'Live for Speed'
+                    elif 'rbr' in racing_simulator.lower():
+                        racing_simulator = 'Richard Burns Rally'
+                    elif 'Richard' in racing_simulator.lower():
+                        racing_simulator = 'Richard Burns Rally'
+                    elif not racing_simulator:
+                        continue
+                    elif 'gtr2' in racing_simulator.lower():
+                        racing_simulator = 'GTR 2'
+                    elif 'gtr 2.' in racing_simulator.lower():
+                        racing_simulator = 'GTR 2'
+                    elif 'evo' in racing_simulator.lower():
+                        racing_simulator = 'GTR Evolution'
+                    elif 'all.' in racing_simulator.lower():
+                        continue
+                    elif 'all of them' in racing_simulator.lower():
+                        continue
+                    elif 'gt legends' in racing_simulator.lower():
+                        racing_simulator = 'GT Legends'
+                    elif 'race 07' in racing_simulator.lower():
+                        racing_simulator = 'Race 07'
+                    elif 'netkar' in racing_simulator.lower():
+                        racing_simulator = 'NetKar Pro'
+                    elif 'r2e' in racing_simulator.lower():
+                        racing_simulator = 'RaceRoom Racing Experience'
+                    elif 'r3e' in racing_simulator.lower():
+                        racing_simulator = 'RaceRoom Racing Experience'
+
+                    racing_simulator = racing_simulator.replace('.', '')
+
                     racing_simulator, created = RacingSimulator.objects.get_or_create(
                         name=racing_simulator
                     )

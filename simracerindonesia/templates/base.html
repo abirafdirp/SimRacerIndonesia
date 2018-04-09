@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/project.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'css/flipclock.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}"/>
-{#  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.theme.min.css' %}"/>#}
+  {#  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.theme.min.css' %}"/>#}
 
   <script type="application/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
   <script type="application/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
@@ -92,69 +92,70 @@
     <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         {% activeurl css_class="is-active" %}
-        <ul>
-          <li>
-            <a href="/">
+          <ul>
+            <li>
+              <a href="/">
               <span class="icon">
                   <i class="fa fa-user"></i>
                 </span>
-              Welcome
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'core:calendar' %}">
+                Welcome
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:calendar' %}">
               <span class="icon">
                   <i class="fa fa-calendar"></i>
                 </span>
-              Calendar
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'core:results' %}">
+                Calendar
+                <span class="tag is-primary">New</span>
+              </a>
+            </li>
+            <li>
+              {#            <a href="{% url 'core:results' %}" disabled>#}
+              <a disabled>
               <span class="icon">
                   <i class="fa fa-flag-checkered"></i>
                 </span>
-              Results
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'core:series' %}">
+                Results
+                <span class="tag is-info">Soon</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:series' %}">
               <span class="icon">
                   <i class="fa fa-car"></i>
                 </span>
-              Series
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
+                Series
+                <span class="tag is-primary">New</span>
+              </a>
+            </li>
+            <li>
+              <a disabled>
               <span class="icon">
                   <i class="fa fa-trophy"></i>
                 </span>
-              Standings
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
+                Standings
+                <span class="tag is-info">Soon</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'core:drivers' %}">
               <span class="icon">
                   <i class="fa fa-group"></i>
                 </span>
-              Drivers
-              <span class="tag is-primary">New</span>
-            </a>
-          </li>
-          <li>
-            <a>
+                Drivers
+                <span class="tag is-primary">New</span>
+              </a>
+            </li>
+            <li>
+              <a>
               <span class="icon">
                   <i class="fa fa-file-text-o"></i>
                 </span>
-              Blog and News
-            </a>
-          </li>
-        </ul>
+                Blog and News
+              </a>
+            </li>
+          </ul>
         {% endactiveurl %}
       </div>
     </nav>

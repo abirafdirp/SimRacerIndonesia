@@ -35,7 +35,7 @@ class UserProfile(TimeStampedModel):
                               blank=True, null=True)
     birth_year = models.DateField(blank=True, null=True)
     racing_simulators = models.ManyToManyField(
-        'core.RacingSimulator', blank=True
+        'core.RacingSimulator', blank=True, related_name='racing_simulators'
     )
     simracing_experience = models.CharField(
         choices=SIMRACING_EXPERIENCE_CHOICES, blank=True,

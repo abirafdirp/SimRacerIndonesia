@@ -16,6 +16,9 @@ def generate_race_car_picture_path(instance, filename):
 class RacingSimulator(TimeStampedModel):
     name = models.CharField(unique=True, max_length=50)
 
+    def __str__(self):
+        return self.name
+
 
 class Track(TimeStampedModel):
     name = models.CharField(max_length=50, help_text='with mod name')
