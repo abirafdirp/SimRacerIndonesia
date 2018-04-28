@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static thumbnail %}
+
+{% block title %}Sim Racers - {% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <h5 class="is-size-4"><b>Sim Racers</b></h5>
+      <br>
+      <div class="columns is-multiline">
+        {% for sim_racer in paginated_sim_racers %}
+          <div class="column is-2-desktop is-one-third-tablet is-half-mobile">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="https://bulma.io/images/placeholders/480x480.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-size-5">{{ sim_racer.user.name }}</p>
+                  </div>
+                </div>
+
+                <div class="content is-size-6">
+                  <strong>Experience:</strong> {{ sim_racer.simracing_experience }}
+                  <br>
+                  <strong>Sims:</strong>
+                  {% for racing_simulator in sim_racer.racing_simulators_trimmed %}
+                    {{ racing_simulator.name }}{% if not forloop.last %}, {% endif %}
+                  {% endfor %}
+                  {% if sim_racer.racing_simulators_more %}<strong> and {{ sim_racer.racing_simulators_more }} more </strong>{% endif %}
+                </div>
+              </div>
+              <footer class="card-footer">
+                <p class="card-footer-item">
+      <span>
+        View <a href="https://twitter.com/codinghorror/status/506010907021828096">profile</a>
+      </span>
+                </p>
+              </footer>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

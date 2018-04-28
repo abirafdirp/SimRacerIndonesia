@@ -1,5 +1,4 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from simracerindonesia.users.models import UserProfile
@@ -18,28 +17,32 @@ class SeriesTemplateView(TemplateView):
     template_name = 'series.html'
 
 
-class DriversTemplateView(TemplateView):
-    template_name = 'drivers.html'
+class SimRacersTemplateView(TemplateView):
+    template_name = 'sim_racers.html'
 
     def get_context_data(self, **kwargs):
-        drivers = UserProfile.objects.all()
-        paginator = Paginator(drivers, 30)
+        sim_racers = UserProfile.objects.filter(user__is_staff=False)
+        paginator = Paginator(sim_racers, 18)
         page = self.request.GET.get('page')
 
+        for sim_racer in sim_racers:
+            sim_racer.racing_simulators_trimmed = sim_racer.racing_simulators.all()[:3]
+            sim_racer.racing_simulators_more = sim_racer.racing_simulators.all().count() - len(sim_racer.racing_simulators_trimmed)
+
         try:
-            paginated_drivers = paginator.page(page)
+            paginated_sim_racers = paginator.page(page)
         except PageNotAnInteger:
-            paginated_drivers = paginator.page(1)
+            paginated_sim_racers = paginator.page(1)
         except EmptyPage:
-            paginated_drivers = paginator.page(paginator.num_pages)
+            paginated_sim_racers = paginator.page(paginator.num_pages)
 
         page_range_ctx = get_page_range_helper_context(
             paginator=paginator,
-            paginated_object_list=paginated_drivers
+            paginated_object_list=paginated_sim_racers
         )
 
         ctx = {
-            'paginated_drivers': paginated_drivers,
+            'paginated_sim_racers': paginated_sim_racers,
             **page_range_ctx,
             **super().get_context_data(**kwargs)
         }
